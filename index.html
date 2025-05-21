@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtle Island Studios - Official Website</title>
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Libre Baskerville', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f8f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #f5f3ec;
+            border-bottom: 1px solid #e0d9c5;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Newsletter Section */
+        #newsletter {
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .newsletter-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .newsletter-form input[type="text"],
+        .newsletter-form input[type="email"] {
+            font-family: 'Libre Baskerville', serif;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .newsletter-form input[type="submit"] {
+            font-family: 'Libre Baskerville', serif;
+            padding: 12px 24px;
+            background-color: #38352f;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-form input[type="submit"]:hover {
+            background-color: #554f44;
+        }
+
+        /* Excerpts Section */
+        .excerpt {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0d9c5;
+        }
+
+        blockquote {
+            margin-left: 0;
+            padding-left: 20px;
+            border-left: 3px solid #e0d9c5;
+            font-style: italic;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            font-style: italic;
+            color: #6b5f4a;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #38352f;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Author Name</h1>
+        <p>Official Website</p>
+    </header>
+    
+    <!-- Email Capture Section -->
+    <section id="newsletter">
+        <div class="newsletter-container">
+            <h2>Join the Newsletter</h2>
+            <p>Subscribe to receive updates on new releases, events, and exclusive content.</p>
+            <form class="newsletter-form" id="email-form" action="#" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email Address" required>
+                <input type="submit" value="Subscribe">
+            </form>
+            <p class="form-message"></p>
+        </div>
+    </section>
+    
+    <!-- Excerpts Section -->
+    <section id="excerpts">
+        <h2>Latest Works</h2>
+        
+        <article class="excerpt">
+            <h3>The Silent Path</h3>
+            <p>Published May 15, 2025</p>
+            <blockquote>
+                The morning light filtered through the ancient oaks, casting dappled shadows on the forest floor. Eleanor paused, her breath forming small clouds in the crisp air. This was where it had all begun, decades ago, when she'd first stumbled upon the weathered stone archway hidden among the ferns and wildflowers.
+            </blockquote>
+            <a href="#" class="read-more">Continue reading...</a>
+        </article>
+        
+        <article class="excerpt">
+            <h3>Whispers of Autumn</h3>
+            <p>Published January 3, 2025</p>
+            <blockquote>
+                The letter arrived on Tuesday, unexpected and unwelcome. Thomas recognized the handwriting immediately—those precise, slanting characters that somehow managed to appear both elegant and threatening. He knew what it contained before he even broke the seal: an invitation he couldn't refuse, to a house he'd sworn never to return to.
+            </blockquote>
+            <a href="#" class="read-more">Continue reading...</a>
+        </article>
+        
+        <article class="excerpt">
+            <h3>The Clockmaker's Daughter</h3>
+            <p>Published October 12, 2024</p>
+            <blockquote>
+                The mechanisms were delicate, almost impossibly so. Eliza's fingers moved with practiced precision, manipulating gears no larger than grains of rice. Outside, the city slept, but in her father's workshop, time was being carefully, lovingly assembled. She had six hours until dawn—six hours to complete what her father had started.
+            </blockquote>
+            <a href="#" class="read-more">Continue reading...</a>
+        </article>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Author Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("email-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const name = this.elements.name.value;
+            const email = this.elements.email.value;
+            const messageElement = document.querySelector(".form-message");
+            
+            // Here you would normally send the data to a server
+            if (name && email) {
+                messageElement.textContent = "Thank you for subscribing! You'll receive our next newsletter soon.";
+                messageElement.style.color = "green";
+                this.reset();
+            } else {
+                messageElement.textContent = "Please fill in all fields.";
+                messageElement.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>
